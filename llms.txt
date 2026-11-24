@@ -1,0 +1,26 @@
+# Brilliant Nodes
+
+> Brilliant Nodes runs node, validator and launch-day infrastructure for new blockchain networks, and builds apps that use what each blockchain does best.
+
+## What we do
+- Launch-day capacity: rented machines brought online within hours of a network launch, across several providers.
+- Seed and hub nodes: permanent servers in Europe, North America and Asia that our machines and outside users sync from.
+- Validator operations: we take part in the validator programmes of GenLayer, Flop Network and gno.land, with separate owner and operator keys and full monitoring.
+- Development: apps and contract building blocks on GenLayer, each with public code, a live demo and a written article. All demos use fictional companies and test tokens only.
+
+## Pages
+- [Home](https://www.brilliantnodes.com/): services, servers, development work, research, validators and contact
+- [Security](https://www.brilliantnodes.com/security.html): how we keep keys, servers and software safe, and how to report a problem
+
+## Development projects (GenLayer)
+- [Launch Claim Checker](https://checker.brilliantnodes.com/): checks a new coin's launch claims against its block explorer
+- [ClaimEscrow](https://claims.brilliantnodes.com/): escrow for buying and selling bankruptcy claims
+- [PrivateCreditGate](https://privatecredit.brilliantnodes.com/): loan covenant checks from a borrower's published report
+- [RigSettle](https://rigsettle.brilliantnodes.com/): escrow for renting mining power, split by hashrate delivered
+- [Code](https://github.com/brilliantnodes): all public on GitHub
+
+## Contact
+- Email: bn@brilliantnodes.com
+- X: https://x.com/brilliantnodes
+- YouTube: https://www.youtube.com/@Brilliantnodes
+- GitHub: https://github.com/brilliantnodes
