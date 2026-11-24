@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src https://raw.githubusercontent.com; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Brilliant Nodes: node, validator and launch-day infrastructure</title>
+<meta name="description" content="Node, validator and launch-day infrastructure for new networks: seed nodes, validators, rented fleets in more than 20 countries, and apps on GenLayer.">
+<link rel="canonical" href="https://www.brilliantnodes.com/">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#2A2133">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.brilliantnodes.com/">
+<meta property="og:title" content="Brilliant Nodes">
+<meta property="og:description" content="Node, validator and launch-day infrastructure for new networks.">
+<meta property="og:image" content="https://www.brilliantnodes.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Brilliant Nodes: a round brilliant cut drawn as a network of nodes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@brilliantnodes">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/ahn-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ahn-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js" defer></script>
+<script src="/motion.js" defer></script>
+<script src="/globe.js" defer></script>
+<script src="/demos.js" defer></script>
+<script src="/status.js" defer></script>
+<script src="/contact.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+    <a class="mark" href="/" aria-label="Brilliant Nodes, home">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><use href="#facet-mark"/></svg>
+      <span>Brilliant Nodes</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#run">What we do</a>
+      <a href="#genlayer">Development</a>
+      <a href="#research">Research</a>
+      <a href="#validators">Validators</a>
+      <a href="#contact" data-contact>Contact</a>
+    </nav>
+  </header>
+
+<main id="main">
+<div class="hero-wrap">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <section class="hero" aria-labelledby="name">
+    <div class="hero-title" id="hero-title">
+      <h1 id="name">Brilliant Nodes</h1>
+      <p class="lede">Node, validator and launch-day infrastructure for new networks.</p>
+    </div>
+
+    <figure class="gem" aria-hidden="true">
+      <canvas id="gl" width="750" height="600"></canvas>
+      <canvas id="gem" width="750" height="600"></canvas>
+      <img class="gem-still" src="/gem.svg" alt="" width="750" height="600">
+    </figure>
+    <button class="pause" type="button" id="pause" aria-pressed="false" hidden>Pause animation</button>
+
+    <div class="hero-body">
+      <p>We bring up seed nodes and validators for new networks from the first hour, run rented fleets across more than 20 countries, and watch every machine with its own watchdog.</p>
+      <p class="actions">
+        <a class="btn btn-solid" href="#genlayer">See our development work</a>
+        <a class="btn" href="mailto:bn@brilliantnodes.com" data-contact>Email us</a>
+      </p>
+    </div>
+  </section>
+  <ul class="facts" aria-label="Key facts">
+    <li><strong>7</strong><span>apps and building blocks built on GenLayer</span></li>
+    <li><strong>4</strong><span>accepted in GenLayer’s builder programme</span></li>
+    <li><strong>100+</strong><span>machines run at the same time</span></li>
+    <li><strong>20+</strong><span>countries where we have run machines</span></li>
+    <li><strong>6</strong><span>continents with our own servers</span></li>
+    <li><strong>2,000+</strong><span>automated tests behind our GenLayer code</span></li>
+  </ul>
+  <p class="live" id="live" hidden><span class="live-dot" aria-hidden="true"></span><b>Live status</b><span class="live-items" id="live-items"></span><a href="https://brilliantnodes.github.io/status/">Status page</a></p>
+</div>
+
+<div class="flow">
+  <div class="beam" aria-hidden="true"><span></span></div>
+
+  <section class="band rise" id="about" aria-labelledby="about-h" data-mark>
+    <h2 id="about-h">Who we are</h2>
+    <p class="wide">Brilliant Nodes is run by a team with more than 20 years of experience in financial markets and technology: trading, investment banking and fund management, digital-asset funds across arbitrage, multi-strategy and early-stage venture, and doctoral research on artificial neural networks.</p>
+    <p class="wide">We set up Brilliant Nodes to work on the infrastructure side of new networks: the nodes, validators and apps they run on.</p>
+    <p class="wide">We run our infrastructure the way regulated finance runs its operations: separated keys, tested and pinned releases, written procedures, and a check on every result.</p>
+  </section>
+
+  <section class="band rise" id="run" aria-labelledby="run-h" data-mark>
+    <h2 id="run-h">What we do</h2>
+    <p class="wide">We run our own servers on six continents. That spread gives a network the geographic diversity it needs, and keeps it stable if one region has trouble.</p>
+    <figure class="netmap" id="netfig">
+      <div class="map-stage">
+        <canvas id="globe" tabindex="0" role="img" aria-label="Globe. Our seed and hub servers in Europe, North America and Asia; our servers in Chicago, São Paulo, Frankfurt, Prague, Johannesburg, Singapore and Melbourne; and countries where we have rented machines. Drag sideways or use the arrow keys to turn it."></canvas>
+        <canvas id="netmap" role="img" aria-label="World map. Our seed and hub servers in Europe, North America and Asia; our servers in Chicago, São Paulo, Frankfurt, Prague, Johannesburg, Singapore and Melbourne; and countries where we have rented machines."></canvas>
+      </div>
+      <figcaption>
+        <span class="key key-seed">Seed and hub servers: Europe, North America, Asia</span>
+        <span class="key key-live">Our servers: Chicago, São Paulo, Frankfurt, Prague, Johannesburg, Singapore, Melbourne</span>
+        <span class="map-hint">Drag the globe sideways to turn it.</span>
+        <span class="map-ctrls">
+          <button class="mini-pause" type="button" id="map-view" aria-pressed="false">Show flat map</button>
+          <button class="mini-pause" type="button" id="map-pause" aria-pressed="false" hidden>Pause map</button>
+        </span>
+      </figcaption>
+    </figure>
+    <dl class="tiles">
+      <div class="tile tilt"><dt>Launch-day capacity</dt><dd>We bring rented machines online within hours of a launch, across several providers. We have run more than 100 at once, in more than 20 countries on four continents.</dd></div>
+      <div class="tile tilt"><dt>Seed and hub nodes</dt><dd>Permanent seed and hub servers in Europe, North America and Asia, plus our own stratum hubs. Our machines and outside users sync from them, and spreading them across continents keeps a network reachable and stable if one region has trouble.</dd></div>
+      <div class="tile tilt"><dt>Validator operations</dt><dd>We take part in the validator programmes of GenLayer, Flop Network and gno.land, with separate owner and operator keys, full monitoring and servers spread across continents.</dd></div>
+      <div class="tile tilt"><dt>Mining optimisation</dt><dd>Every machine is calibrated. We compare its reported output with what it really delivers, and tune or replace what falls short.</dd></div>
+      <div class="tile tilt"><dt>Apps on chain</dt><dd>We build and run decentralised apps on GenLayer, each with public code, a live demo and a written explanation.</dd></div>
+      <div class="tile tilt"><dt>GPU and AI compute</dt><dd>The same fleet and tooling run GPU work beyond mining, such as AI inference for useful-work networks.</dd></div>
+      <div class="tile tilt"><dt>Watchdogs</dt><dd>Every node and worker has its own watchdog. A hung process is restarted, and we get an alert.</dd></div>
+      <div class="tile tilt"><dt>Security</dt><dd>Pinned, hash-checked binaries only. Owner and operator keys are kept apart, and recovery seeds are stored offline. <a href="/security.html">How we keep things secure</a></dd></div>
+      <div class="tile tilt"><dt>Reward checks</dt><dd>Every hour we check that rewards reached the wallet they were meant for.</dd></div>
+    </dl>
+  </section>
+
+  <section class="band rise" id="launch" aria-labelledby="launch-h" data-mark>
+    <h2 id="launch-h">How we prepare a launch</h2>
+    <p class="wide">The first hours of a new network matter most, so we prepare in fixed steps and check every one.</p>
+    <ol class="timeline">
+      <li><b>The day before</b><p>A full dress rehearsal: every step run end to end on test machines.</p></li>
+      <li><b>3 hours before</b><p>Our hub and seed nodes are up in three regions, so no machine has to wait for a chain download.</p></li>
+      <li><b>2 hours before</b><p>Machines rented across several providers, with spares. Every one is set up, checked and ready 30 minutes before the start.</p></li>
+      <li><b>The last 3 hours</b><p>We check the project’s releases every five minutes and apply any change at once.</p></li>
+      <li><b>Launch</b><p>Our machines start working from the first second.</p></li>
+      <li><b>10 minutes after</b><p>The first check that rewards reach the wallets they should. Then the same check every hour.</p></li>
+    </ol>
+  </section>
+
+  <section class="band rise" id="ai" aria-labelledby="ai-h" data-mark>
+    <h2 id="ai-h">AI</h2>
+    <p class="wide">AI has been part of our work from the start: our team’s background includes doctoral research on artificial neural networks. Today we build apps whose outcomes are decided by AI validators on GenLayer, and we prepare GPU capacity for AI-inference networks such as Flop.</p>
+  </section>
+
+  <section class="band rise" id="genlayer" aria-labelledby="gl-h" data-mark>
+    <h2 id="gl-h">Development</h2>
+    <p class="wide lead-in">We build advanced solutions that make full use of what each blockchain does best, and we help the networks we work with grow by putting their features to real use.</p>
+    <h3 class="sub dev-sub">Recent development projects: GenLayer</h3>
+    <p class="wide">GenLayer is a blockchain whose validators can read public web pages and use AI models to agree on what those pages say. We use it to settle agreements against public records: money waits in escrow, and moves only when the validators agree. Every app below has public code, a live demo and a written article, and uses fictional companies and test tokens only.</p>
+    <p class="wide">Four of our builds have been accepted in GenLayer’s builder programme so far; the rest are under review.</p>
+    <figure class="settle" id="settle">
+      <figcaption>How one of our GenLayer apps settles a deal</figcaption>
+      <ol class="steps">
+        <li class="step st1">
+          <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><rect x="7" y="16" width="34" height="25" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16 16v-4a8 8 0 0 1 16 0v4" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="24" cy="28.5" r="4.5" fill="currentColor"/></svg>
+          <strong>Money waits</strong><span>The buyer’s payment is locked in the contract.</span>
+        </li>
+        <li class="step st2">
+          <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><path d="M12 6h18l8 8v28H12z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M17 20h16M17 26h16M17 32h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><rect class="scan" x="9" y="12" width="32" height="3" rx="1.5" fill="currentColor"/></svg>
+          <strong>Validators read</strong><span>Several validators each read the same public page.</span>
+        </li>
+        <li class="step st3">
+          <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><circle cx="8" cy="30" r="4.5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="16" cy="18" r="4.5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="24" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="32" cy="18" r="4.5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="40" cy="30" r="4.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path class="chk" d="M16 37l6 6 11-12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <strong>They must agree</strong><span>The result counts only when they agree on what the page says.</span>
+        </li>
+        <li class="step st4">
+          <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><g class="coin"><circle cx="12" cy="24" r="8.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M12 19.5v9M9.5 21.8h3.8a2.2 2.2 0 0 1 0 4.4H9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></g><path d="M29 24h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <strong>Money moves</strong><span>The contract pays out by that result, with no one in the middle.</span>
+        </li>
+      </ol>
+      <button class="mini-pause" type="button" id="settle-pause" aria-pressed="false" hidden>Pause diagram</button>
+    </figure>
+    <section class="try" id="try" aria-labelledby="try-h">
+      <h3 id="try-h">Try the rules yourself</h3>
+      <p class="try-note">These panels apply each contract’s payout rules in your browser, with the same terms as our test runs. They move no money. The real apps settle on GenLayer.</p>
+      <div class="try-grid">
+        <form class="demo" id="demo-rig" aria-labelledby="rig-h">
+          <h4 id="rig-h">RigSettle: renting mining power</h4>
+          <p class="terms">The buyer rents <b>10 GH/s for 12 hours</b> and pays <b>10 test GEN</b> into escrow. The seller adds a <b>2 GEN</b> bond. Each hour is read from the buyer’s pool page.</p>
+          <label class="ctl"><span>Rig delivers <output id="rig-rate-o">6.0 GH/s</output></span><input type="range" id="rig-rate" min="0" max="12" step="0.1" value="6"></label>
+          <label class="ctl"><span>Rig offline for <output id="rig-off-o">0 hours</output></span><input type="range" id="rig-off" min="0" max="12" step="1" value="0"></label>
+          <label class="tick"><input type="checkbox" id="rig-noshow"> The seller never connects the rig</label>
+          <div class="chart" aria-hidden="true"><div class="slots" id="rig-slots"></div><b class="cap">10 GH/s rented</b></div>
+          <p class="chart-key">Each bar is one hour, as read from the pool page. Hashrate above the line is not billed.</p>
+          <div class="result" aria-live="polite">
+            <p class="rule" id="rig-rule"></p>
+            <div class="split"><i class="s-seller" id="rig-bar-s"></i><i class="s-buyer" id="rig-bar-b"></i></div>
+            <p class="amounts"><span><b id="rig-seller"></b> to the seller</span><span><b id="rig-buyer"></b> back to the buyer</span></p>
+          </div>
+          <p class="open"><a href="https://rigsettle.brilliantnodes.com/">Open the real RigSettle</a></p>
+        </form>
+        <form class="demo" id="demo-claim" aria-labelledby="claim-h">
+          <h4 id="claim-h">ClaimEscrow: selling a bankruptcy claim</h4>
+          <p class="terms">A supplier sells a <b>$1,000,000</b> claim against a fictional company for <b>60%</b>. The buyer pays <b>1.2 test GEN</b> ($600,000 at $500,000 per GEN) into escrow, and the transfer is confirmed on the register.</p>
+          <label class="ctl"><span>Released to the seller at the transfer <output id="claim-up-o">50%</output></span><input type="range" id="claim-up" min="0" max="100" step="5" value="50"></label>
+          <label class="ctl"><span>The court decides <output id="claim-al-o">allowed at 80%</output></span><input type="range" id="claim-al" min="0" max="100" step="5" value="80"></label>
+          <div class="result" aria-live="polite">
+            <p class="rule" id="claim-rule"></p>
+            <div class="split"><i class="s-seller" id="claim-bar-s"></i><i class="s-buyer" id="claim-bar-b"></i></div>
+            <p class="amounts"><span><b id="claim-seller"></b> to the seller</span><span><b id="claim-buyer"></b> back to the buyer</span></p>
+          </div>
+          <p class="open"><a href="https://claims.brilliantnodes.com/app/">Try the real ClaimEscrow</a></p>
+        </form>
+      </div>
+    </section>
+    <div class="projects">
+      <article class="proj tilt p1">
+        <p class="badge">Accepted</p>
+        <h3>Launch Claim Checker</h3>
+        <p class="market"><strong>$14bn+</strong> taken in by crypto scams in 2025 (Chainalysis, via Decrypt)</p>
+        <p>Checks a new coin’s launch claims, such as fair mining or no premine, against what its block explorer shows, and records the verdict on chain. Its claim bounties hold test tokens behind a claim, paid to the first person who shows the claim is false.</p>
+        <p class="proof"><span>Check it yourself:</span> seven test cases run live on GenLayer’s public test network, 41 transactions, all matching our record. <a href="https://scan.bradbury.genlayer.com/address/0xc437e39BA9e51282a259c814e2d4d9CcEF6c257b">See the contract</a></p>
+        <ul class="links">
+          <li><a href="https://checker.brilliantnodes.com/">Open the checker</a></li>
+          <li><a href="https://checker.brilliantnodes.com/bounties.html">Claim bounties</a></li>
+          <li><a href="https://checker.brilliantnodes.com/article.html">Article</a></li>
+          <li><a href="https://github.com/brilliantnodes/launch-claim-checker">Code</a></li>
+          <li><a href="https://youtu.be/fFNq9PY1vSI">Demo video</a></li>
+        </ul>
+      </article>
+      <article class="proj tilt p2">
+        <h3>ClaimEscrow</h3>
+        <p class="market"><strong>$25bn</strong> litigation finance, the market claim trading belongs to, 2025 estimate (Custom Market Insights)</p>
+        <p>A safer way to buy and sell bankruptcy claims. The price waits in escrow while validators read the claim’s entry on the public claims register; the seller is paid for the amount finally allowed, and the buyer gets the rest back.</p>
+        <p class="proof"><span>Check it yourself:</span> nine fictional deals on GenLayer’s public test network, 70 transactions, all finalized and matching our record. <a href="https://scan.bradbury.genlayer.com/address/0xdE2e969ecFE0229849ad95CF3Df8aC803F079131">See the contract</a></p>
+        <ul class="links">
+          <li><a href="https://claims.brilliantnodes.com/app/">Try it yourself</a></li>
+          <li><a href="https://claims.brilliantnodes.com/">Open ClaimEscrow</a></li>
+          <li><a href="https://claims.brilliantnodes.com/article.html">Article</a></li>
+          <li><a href="https://github.com/brilliantnodes/claim-escrow">Code</a></li>
+          <li><a href="https://youtu.be/MFiW9LkCT1s">Demo video</a></li>
+        </ul>
+      </article>
+      <article class="proj tilt p3">
+        <h3>PrivateCreditGate</h3>
+        <p class="market"><strong>$1.7–3trn</strong> private credit, published estimates for 2025–26 (Universal Asset Owners, S&amp;P Global)</p>
+        <p>Checks the financial limits a borrower has promised to keep (loan covenants) straight from its published report, instead of someone retyping figures from a PDF. Validators read the report, code applies the loan terms, and breach, cure and repayment are settled on chain.</p>
+        <p class="proof"><span>Check it yourself:</span> 63 transactions on GenLayer’s public test network, each checked against the chain. <a href="https://scan.bradbury.genlayer.com/address/0x8c17b9742700539D3A2Ec97111073e5c93A6e1f0">See the contract</a></p>
+        <ul class="links">
+          <li><a href="https://privatecredit.brilliantnodes.com/">Open PrivateCreditGate</a></li>
+          <li><a href="https://privatecredit.brilliantnodes.com/article.html">Article</a></li>
+          <li><a href="https://github.com/brilliantnodes/privatecredit-gate">Code</a></li>
+          <li><a href="https://youtu.be/d7g2sU8bzn0">Demo video</a></li>
+        </ul>
+      </article>
+      <article class="proj tilt p4">
+        <h3>RigSettle</h3>
+        <p class="market"><strong>$17.2bn</strong> earned by Bitcoin miners in 2025, projected (The Block)</p>
+        <p>Escrow for renting mining power. The buyer’s payment is locked, validators read the buyer’s mining pool page, and the escrow is split by the hashrate actually delivered.</p>
+        <p class="proof"><span>Check it yourself:</span> 11 of 11 test cases passed live on GenLayer Studio, and the contract also runs on the public test network. <a href="https://scan.bradbury.genlayer.com/address/0xa91Ee5FEe48852620E6deC87159f04Edb40312B4">See the contract</a></p>
+        <ul class="links">
+          <li><a href="https://rigsettle.brilliantnodes.com/">Open RigSettle</a></li>
+          <li><a href="https://rigsettle.brilliantnodes.com/article.html">Article</a></li>
+          <li><a href="https://github.com/brilliantnodes/rigsettle">Code</a></li>
+          <li><a href="https://youtu.be/f3gmJecyeSU">Demo video</a></li>
+        </ul>
+      </article>
+      <article class="proj tilt p5">
+        <p class="badge">All three accepted</p>
+        <h3>ReportReader, RuleCheck and MeterReader</h3>
+        <p>Three building blocks that other contracts can use. ReportReader reads exact figures from published company reports. RuleCheck checks facts on public pages against rules written as data. MeterReader turns a public statistics table into one agreed reading.</p>
+        <p class="proof"><span>Check it yourself:</span> <a href="https://explorer-studio.genlayer.com/address/0xd2f8B46D5A325eF6E81476063DD1520c9EDD2029">ReportReader</a> ran 35 live transactions, all finalized; <a href="https://scan.bradbury.genlayer.com/address/0x286A160029D89b2C9fA6e1cEe0f31A954Eb329B4">MeterReader</a>’s readings agreed exactly on the public test network; <a href="https://explorer-studio.genlayer.com/address/0x28BEC7C9A99cd19c101fbaB1CaFe0b6e4Db3f21e">RuleCheck</a> ran four live checks, with three validators agreeing on each.</p>
+        <ul class="links">
+          <li><a href="https://github.com/brilliantnodes/genlayer-patterns/tree/main/report-reader">ReportReader</a></li>
+          <li><a href="https://github.com/brilliantnodes/genlayer-patterns/tree/main/rule-check">RuleCheck</a></li>
+          <li><a href="https://github.com/brilliantnodes/genlayer-patterns/tree/main/meter-reader">MeterReader</a></li>
+          <li><a href="https://github.com/brilliantnodes/genlayer-patterns">All code</a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="band rise" id="research" aria-labelledby="res-h" data-mark>
+    <h2 id="res-h">Research</h2>
+    <p class="wide">Each app starts from a real problem. We write it up in plain words: how the problem is handled today, where that falls short, what we propose, and what our tests showed.</p>
+    <ol class="papers">
+      <li><a href="https://claims.brilliantnodes.com/article.html">Who carries the risk when a bankruptcy claim is sold? A proposal for settling claim trades from the public register</a><span>Bankruptcy claims · ClaimEscrow · <a class="also" href="https://medium.com/@brilliantnodes/who-carries-the-risk-when-a-bankruptcy-claim-is-sold-3eacca8d05df">Also on Medium</a></span></li>
+      <li><a href="https://privatecredit.brilliantnodes.com/article.html">The weakest link in private credit is a person typing numbers: a proposal for automated covenant testing</a><span>Private credit · PrivateCreditGate · <a class="also" href="https://medium.com/@brilliantnodes/the-weakest-link-in-private-credit-is-a-person-typing-numbers-a-proposal-for-automated-covenant-dcbc35c923fd">Also on Medium</a></span></li>
+      <li><a href="https://rigsettle.brilliantnodes.com/article.html">Paying for rented mining power without a judge: a proposal for settling hashrate rentals from the buyer’s own pool</a><span>Compute rental · RigSettle · <a class="also" href="https://medium.com/@brilliantnodes/paying-for-rented-mining-power-without-a-judge-a-proposal-for-settling-hashrate-rentals-from-the-70cab2a76ad8">Also on Medium</a></span></li>
+      <li><a href="https://checker.brilliantnodes.com/article.html">“No premine”, “fair launch”: who checks the promises new coins make? A proposal for claim bounties</a><span>Launch claims · Launch Claim Checker</span></li>
+    </ol>
+  </section>
+
+  <section class="band rise" id="validators" aria-labelledby="val-h" data-mark>
+    <h2 id="val-h">Validators and nodes</h2>
+    <p class="wide">We work as node and validator operators on some of the most advanced blockchains, adding stability and efficiency to the networks we join. We run every node ourselves, on our own servers, with separate owner and operator keys and full monitoring, and we spread our servers across regions and hosting providers, so a network stays stable if one region or provider has trouble.</p>
+    <h3 class="sub">Nodes we run today</h3>
+    <ul class="nodes">
+      <li><strong>Gnosis</strong><span>Full node on the main network.</span><em class="node-live" data-slug="gnosis-chain-full-node"></em></li>
+      <li><strong>gno.land</strong><span>Node on the Onyx test network; we are a registered validator operator.</span><em class="node-live" data-slug="gno-land-onyx-node-testnet"></em></li>
+      <li><strong>Ethereum Hoodi</strong><span>Execution and consensus node on Ethereum’s Hoodi test network, set up for staking tests.</span></li>
+    </ul>
+    <h3 class="sub">Validator programmes</h3>
+    <ol class="dates">
+      <li><time datetime="2026-11-14">14 Nov 2026</time><p><strong>GenLayer.</strong> Joined the GenLayer validator programme, with our waitlist spot active.</p></li>
+      <li><time datetime="2026-11-19">19 Nov 2026</time><p><strong>gno.land.</strong> Registered as a validator operator on the Onyx test network.</p></li>
+      <li><time datetime="2026-11-21">21 Nov 2026</time><p><strong>Flop Network.</strong> Registered for the Flop Network testnet validator programme.</p></li>
+    </ol>
+  </section>
+
+  <section class="band rise" id="work" aria-labelledby="work-h" data-mark>
+    <h2 id="work-h">Working with networks</h2>
+    <p class="wide">When we join a network we contribute more than a node: public seed nodes, testing of new releases and issue reports, example apps, and help with monitoring. New and established projects can reach us at <a href="mailto:bn@brilliantnodes.com">bn@brilliantnodes.com</a>.</p>
+  </section>
+
+  <section class="band rise" id="contact" aria-labelledby="contact-h" data-mark>
+    <h2 id="contact-h">Contact</h2>
+    <p class="inq-open" id="inquiry"><button type="button" class="btn btn-solid" data-contact>Send an inquiry</button> <span>or email <a href="mailto:bn@brilliantnodes.com">bn@brilliantnodes.com</a> directly</span></p>
+    <dl class="contact">
+      <div><dt>Email</dt><dd><a href="mailto:bn@brilliantnodes.com">bn@brilliantnodes.com</a></dd></div>
+      <div><dt>GitHub</dt><dd><a href="https://github.com/brilliantnodes">github.com/brilliantnodes</a></dd></div>
+      <div><dt>X</dt><dd><a href="https://x.com/brilliantnodes">@brilliantnodes</a></dd></div>
+      <div><dt>YouTube</dt><dd><a href="https://www.youtube.com/@Brilliantnodes">@Brilliantnodes</a></dd></div>
+      <div><dt>Discord</dt><dd>brilliantnodes</dd></div>
+      <div><dt>Security reports</dt><dd><a href="/security.html#report">How to report a problem</a></dd></div>
+    </dl>
+  </section>
+</div>
+</main>
+
+<footer class="foot">
+  <nav class="social" aria-label="Brilliant Nodes elsewhere">
+    <a href="https://x.com/brilliantnodes"><svg width="22" height="22" aria-hidden="true"><use href="#i-at"/></svg><span>X<small>@brilliantnodes</small></span></a>
+    <a href="https://www.youtube.com/@Brilliantnodes"><svg width="22" height="22" aria-hidden="true"><use href="#i-play"/></svg><span>YouTube<small>@Brilliantnodes</small></span></a>
+    <button type="button" class="copy-handle" data-copy="brilliantnodes" aria-label="Discord: brilliantnodes. Copy the username"><svg width="22" height="22" aria-hidden="true"><use href="#i-chat"/></svg><span>Discord<small><b>brilliantnodes</b><i class="copy-state"> · copy</i></small></span></button>
+    <a href="https://github.com/brilliantnodes"><svg width="22" height="22" aria-hidden="true"><use href="#i-code"/></svg><span>GitHub<small>brilliantnodes</small></span></a>
+    <a href="#inquiry" data-contact><svg width="22" height="22" aria-hidden="true"><use href="#i-mail"/></svg><span>Email<small>bn@brilliantnodes.com</small></span></a>
+  </nav>
+  <p>© 2026 Brilliant Nodes. The code of every app on this page is public on <a href="https://github.com/brilliantnodes">GitHub</a>. <a href="/security.html">Security</a>. This site sets no cookies. Its only outside request reads the live status of our nodes from our public status record on GitHub.</p>
+</footer>
+
+<svg class="sprite" aria-hidden="true">
+  <defs><linearGradient id="mark-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF5E7A"/><stop offset=".5" stop-color="#FFB547"/><stop offset="1" stop-color="#3DDCFF"/></linearGradient></defs>
+  <symbol id="i-at" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3.4"/><path d="M15.4 8.6v4.6a2.4 2.4 0 0 0 4.8 0V12a8.2 8.2 0 1 0-3.2 6.5"/></g></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 8.3l6 3.7-6 3.7z" fill="currentColor"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3.5 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3h-2A1.5 1.5 0 0 1 2 13V7a1.5 1.5 0 0 1 1.5-1.5z"/><path d="M18 9h2.5A1.5 1.5 0 0 1 22 10.5v6a1.5 1.5 0 0 1-1.5 1.5H19v2.5L16 18h-4"/></g></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7L3.5 12l5 5M15.5 7l5 5-5 5M13.5 4.5l-3 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6.5L20.5 7"/></g></symbol>
+  <symbol id="facet-mark" viewBox="0 0 32 32">
+    <path d="M9 6h14l7 8-14 14L2 14z" fill="none" stroke="url(#mark-g)" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M2 14h28M9 6l3 8 4-8 4 8 3-8M12 14l4 14 4-14" fill="none" stroke="url(#mark-g)" stroke-width="1.2" stroke-linejoin="round" opacity=".8"/>
+  </symbol>
+</svg>
+
+<dialog class="inquiry" id="inquiry-dlg" aria-labelledby="inq-h">
+  <form id="inq-form" novalidate>
+    <div class="inq-head"><h2 id="inq-h">Send us an inquiry</h2><button type="button" class="inq-x" data-close aria-label="Close">×</button></div>
+    <p class="inq-intro">Your message goes to <b>bn@brilliantnodes.com</b>. Fill in the form and press Send.</p>
+    <div class="inq-grid">
+      <label><span>Your name</span><input name="name" autocomplete="name" required maxlength="100"></label>
+      <label><span>Your email</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+      <label><span>Organisation <span class="opt">(optional)</span></span><input name="org" autocomplete="organization" maxlength="120"></label>
+      <label><span>Topic</span><select name="topic">
+        <option>Validators and nodes</option>
+        <option>Launch-day infrastructure</option>
+        <option>Development work</option>
+        <option>Security report</option>
+        <option>Something else</option>
+      </select></label>
+    </div>
+    <label class="inq-msg"><span>Message</span><textarea name="msg" required maxlength="1500" rows="6"></textarea><span class="inq-count" id="inq-count" aria-live="polite">0 / 1,500</span></label>
+    <p class="inq-err" id="inq-err" role="alert"></p>
+    <div class="inq-actions"><button type="submit" class="btn btn-solid inq-send">Send</button><button type="button" class="btn" data-close>Cancel</button></div>
+    <p class="inq-hint">Send opens your email app with the message ready to bn@brilliantnodes.com. Press Send there to deliver it.</p>
+  </form>
+  <div class="inq-done" id="inq-done" hidden>
+    <div class="inq-head"><h2 tabindex="-1" id="inq-done-h">Your email app should now be open</h2><button type="button" class="inq-x" data-close aria-label="Close">×</button></div>
+    <p>The message is ready there, addressed to bn@brilliantnodes.com. Press Send in your email app to send it.</p>
+    <p>If no email app opened, copy the message and send it to <b>bn@brilliantnodes.com</b> from any email account.</p>
+    <div class="inq-actions"><button type="button" class="btn btn-solid" id="inq-copy">Copy message</button><button type="button" class="btn" id="inq-back">Edit message</button><button type="button" class="btn" data-close>Close</button></div>
+    <p class="inq-copied" id="inq-copied" role="status"></p>
+  </div>
+</dialog>
+</body>
+</html>

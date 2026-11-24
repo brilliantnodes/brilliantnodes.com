@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Security · Brilliant Nodes</title>
+<meta name="description" content="How Brilliant Nodes keeps keys, servers and software safe, and how to report a security problem to us.">
+<link rel="canonical" href="https://www.brilliantnodes.com/security.html">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#2A2133">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.brilliantnodes.com/security.html">
+<meta property="og:title" content="Security · Brilliant Nodes">
+<meta property="og:description" content="How we keep keys, servers and software safe, and how to report a problem.">
+<meta property="og:image" content="https://www.brilliantnodes.com/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/ahn-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ahn-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js" defer></script>
+<script src="/contact.js" defer></script>
+</head>
+<body class="subpage">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+    <a class="mark" href="/" aria-label="Brilliant Nodes, home">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><use href="#facet-mark"/></svg>
+      <span>Brilliant Nodes</span>
+    </a>
+    <nav aria-label="Pages">
+      <a href="/#run">What we do</a>
+      <a href="/#genlayer">Development</a>
+      <a href="/#validators">Validators</a>
+      <a href="/security.html" aria-current="page">Security</a>
+      <a href="/#inquiry">Contact</a>
+    </nav>
+  </header>
+
+<main id="main">
+<div class="page-head">
+  <h1>Security</h1>
+  <p class="lede">How we keep keys, servers and software safe, and how to tell us about a problem.</p>
+  <p class="report-now"><a class="btn btn-solid" href="mailto:bn@brilliantnodes.com?subject=Security%20report">Report a problem</a> <span>bn@brilliantnodes.com</span></p>
+</div>
+
+<div class="flow">
+  <section class="band" id="keys" aria-labelledby="keys-h">
+    <h2 id="keys-h">Keys</h2>
+    <ul class="checks">
+      <li><b>Owner and operator keys are kept apart.</b> A validator’s operator key lives on its server. The owner key, which controls stake and settings, never does.</li>
+      <li><b>Recovery phrases never appear on a screen.</b> They are written straight to locked files, never printed or logged, and copied to encrypted offline storage.</li>
+      <li><b>No secret goes into code or chat.</b> Keys, passwords and tokens are never committed to a code repository, pasted into a form or shared in a message.</li>
+      <li><b>Server addresses stay private.</b> Our public status page checks our nodes without showing where they are.</li>
+    </ul>
+  </section>
+
+  <section class="band" id="servers" aria-labelledby="servers-h">
+    <h2 id="servers-h">Servers</h2>
+    <ul class="checks">
+      <li><b>Validators run on their own servers,</b> away from the machines that hold our automation and accounts.</li>
+      <li><b>Every node has a watchdog.</b> A stuck process is restarted, and we are alerted only when something is definitely wrong, so real alerts are never lost in noise.</li>
+      <li><b>No change overwrites a working setup.</b> Each change goes in as a new configuration file and the previous one is kept, so any change can be undone.</li>
+      <li><b>Rewards are checked every hour</b> against the wallets they should reach.</li>
+    </ul>
+  </section>
+
+  <section class="band" id="software" aria-labelledby="software-h">
+    <h2 id="software-h">Software</h2>
+    <ul class="checks">
+      <li><b>Pinned and hash-checked.</b> Every program we run is a fixed version, checked against its published SHA-256 hash before it starts. We never install an unchecked “latest”.</li>
+      <li><b>Tested before it reaches our machines.</b> A new version is rolled out only after we have tested it.</li>
+      <li><b>Outside programs run in isolation,</b> in separate environments away from our own systems.</li>
+      <li><b>We read every release.</b> We follow the releases of each network we serve and read the notes before every upgrade.</li>
+    </ul>
+  </section>
+
+  <section class="band" id="contracts" aria-labelledby="contracts-h">
+    <h2 id="contracts-h">Our contracts and apps</h2>
+    <ul class="checks">
+      <li><b>Public code.</b> Every contract and app on our site is open on <a href="https://github.com/brilliantnodes">GitHub</a>.</li>
+      <li><b>Tested, then deliberately broken.</b> Each contract has its own test suite, and we break it on purpose in many ways to prove the tests catch every change. Independent reviews come before we publish.</li>
+      <li><b>Limits written down.</b> Each README lists what the contract does not protect against.</li>
+      <li><b>Test tokens and fictional names only.</b> Our demos hold no real money and name no real company.</li>
+    </ul>
+  </section>
+
+  <section class="band" id="report" aria-labelledby="report-h">
+    <h2 id="report-h">Report a problem</h2>
+    <p class="wide">If you find a weakness in our site, our apps, our contracts or our nodes, please email <a href="mailto:bn@brilliantnodes.com?subject=Security%20report">bn@brilliantnodes.com</a>. Our <a href="/.well-known/security.txt">security.txt</a> gives the same address.</p>
+    <ol class="steps-plain">
+      <li>Tell us what you found, where, and how to reproduce it.</li>
+      <li>Use only test accounts and test tokens, and access no more than you need to show the problem.</li>
+      <li>Give us reasonable time to fix it before you publish anything.</li>
+    </ol>
+    <p class="wide">We will confirm that your report arrived, keep you informed while we fix it, and thank you publicly if you would like that.</p>
+  </section>
+</div>
+</main>
+
+<footer class="foot">
+  <nav class="social" aria-label="Brilliant Nodes elsewhere">
+    <a href="https://x.com/brilliantnodes"><svg width="22" height="22" aria-hidden="true"><use href="#i-at"/></svg><span>X<small>@brilliantnodes</small></span></a>
+    <a href="https://www.youtube.com/@Brilliantnodes"><svg width="22" height="22" aria-hidden="true"><use href="#i-play"/></svg><span>YouTube<small>@Brilliantnodes</small></span></a>
+    <button type="button" class="copy-handle" data-copy="brilliantnodes" aria-label="Discord: brilliantnodes. Copy the username"><svg width="22" height="22" aria-hidden="true"><use href="#i-chat"/></svg><span>Discord<small><b>brilliantnodes</b><i class="copy-state"> · copy</i></small></span></button>
+    <a href="https://github.com/brilliantnodes"><svg width="22" height="22" aria-hidden="true"><use href="#i-code"/></svg><span>GitHub<small>brilliantnodes</small></span></a>
+    <a href="/#inquiry"><svg width="22" height="22" aria-hidden="true"><use href="#i-mail"/></svg><span>Email<small>bn@brilliantnodes.com</small></span></a>
+  </nav>
+  <p>© 2026 Brilliant Nodes. <a href="/">Home</a> · <a href="/security.html">Security</a> · <a href="https://github.com/brilliantnodes">GitHub</a></p>
+</footer>
+
+<svg class="sprite" aria-hidden="true">
+  <defs><linearGradient id="mark-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF5E7A"/><stop offset=".5" stop-color="#FFB547"/><stop offset="1" stop-color="#3DDCFF"/></linearGradient></defs>
+  <symbol id="i-at" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3.4"/><path d="M15.4 8.6v4.6a2.4 2.4 0 0 0 4.8 0V12a8.2 8.2 0 1 0-3.2 6.5"/></g></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 8.3l6 3.7-6 3.7z" fill="currentColor"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3.5 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3h-2A1.5 1.5 0 0 1 2 13V7a1.5 1.5 0 0 1 1.5-1.5z"/><path d="M18 9h2.5A1.5 1.5 0 0 1 22 10.5v6a1.5 1.5 0 0 1-1.5 1.5H19v2.5L16 18h-4"/></g></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7L3.5 12l5 5M15.5 7l5 5-5 5M13.5 4.5l-3 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6.5L20.5 7"/></g></symbol>
+  <symbol id="facet-mark" viewBox="0 0 32 32">
+    <path d="M9 6h14l7 8-14 14L2 14z" fill="none" stroke="url(#mark-g)" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M2 14h28M9 6l3 8 4-8 4 8 3-8M12 14l4 14 4-14" fill="none" stroke="url(#mark-g)" stroke-width="1.2" stroke-linejoin="round" opacity=".8"/>
+  </symbol>
+</svg>
+</body>
+</html>
