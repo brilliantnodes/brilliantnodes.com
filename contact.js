@@ -1,6 +1,6 @@
-/* Brilliant Nodes: inquiry form and Discord copy button. The form sends nothing itself: it prepares an email
-   to bn@brilliantnodes.com in the visitor's own email app (mailto), and offers to copy the message as a fallback.
-   No requests, no storage. */
+/* Brilliant Nodes: inquiry form and Discord copy button. With a form endpoint set on the form, Send posts the
+   message to FormSubmit, which emails it to bn@brilliantnodes.com. Without an endpoint, or if that fails, Send prepares
+   the email in the visitor's own email app (mailto) and offers to copy the message. No storage. */
 {
   const TO = 'bn@brilliantnodes.com', MAX = 1500;
   const copyText = text => {
@@ -26,11 +26,13 @@
 
   const dlg = document.getElementById('inquiry-dlg');
   if (dlg && typeof dlg.showModal === 'function') {
-    const form = document.getElementById('inq-form'), done = document.getElementById('inq-done');
+    const form = document.getElementById('inq-form'), done = document.getElementById('inq-done'), sentBox = document.getElementById('inq-sent');
+    const KEY = (form.dataset.endpoint || '').trim(), sendBtn = form.querySelector('button[type=submit]');
+    if (KEY) document.getElementById('inq-hint').textContent = 'Send delivers your message straight to bn@brilliantnodes.com.';
     const err = document.getElementById('inq-err'), count = document.getElementById('inq-count'), copied = document.getElementById('inq-copied');
     const f = n => form.elements[n];
     let last = { subject: '', body: '' };
-    const showForm = () => { done.hidden = true; form.hidden = false; err.textContent = ''; copied.textContent = ''; };
+    const showForm = () => { done.hidden = true; sentBox.hidden = true; form.hidden = false; err.textContent = ''; copied.textContent = ''; };
     const open = () => { showForm(); if (!dlg.open) dlg.showModal(); setTimeout(() => f('name').focus(), 30); };
     const close = () => { if (dlg.open) dlg.close(); };
 
@@ -58,9 +60,29 @@
       const subject = 'Inquiry: ' + topic + ' (' + name + ')';
       const body = msg + '\n\n--\nName: ' + name + '\nEmail: ' + email + (org ? '\nOrganisation: ' + org : '') + '\nTopic: ' + topic + '\nSent from the form on brilliantnodes.com';
       last = { subject, body };
-      window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      form.hidden = true; done.hidden = false;
-      setTimeout(() => document.getElementById('inq-done-h').focus(), 30);
+      const viaMail = failed => {
+        document.getElementById('inq-done-h').textContent = failed ? 'We could not send it from here, so your email app should now be open' : 'Your email app should now be open';
+        window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        form.hidden = true; done.hidden = false;
+        setTimeout(() => document.getElementById('inq-done-h').focus(), 30);
+      };
+      if (!KEY) { viaMail(false); return; }
+      if (form.elements.botcheck && form.elements.botcheck.checked) return;
+      sendBtn.disabled = true; sendBtn.textContent = 'Sending…';
+      const ctl = 'AbortController' in window ? new AbortController() : null, timer = setTimeout(() => ctl && ctl.abort(), 15000);
+      fetch(KEY, {
+        method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, credentials: 'omit', referrerPolicy: 'no-referrer',
+        signal: ctl ? ctl.signal : undefined,
+        body: JSON.stringify({ _subject: subject, _template: 'table', _replyto: email, name, email, organisation: org || '-', topic, message: msg })
+      }).then(r => r.json().catch(() => ({})).then(d => { if (!r.ok || String(d.success) !== 'true') throw new Error(d.message || r.status); }))
+        .then(() => {
+          document.getElementById('inq-sent-to').textContent = email;
+          form.reset(); upd();
+          form.hidden = true; sentBox.hidden = false;
+          setTimeout(() => document.getElementById('inq-sent-h').focus(), 30);
+        })
+        .catch(() => viaMail(true))
+        .finally(() => { clearTimeout(timer); sendBtn.disabled = false; sendBtn.textContent = 'Send'; });
     });
 
     document.getElementById('inq-copy').addEventListener('click', () => {

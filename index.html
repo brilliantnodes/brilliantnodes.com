@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src https://raw.githubusercontent.com; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src https://raw.githubusercontent.com https://formsubmit.co; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Brilliant Nodes: node, validator and launch-day infrastructure</title>
 <meta name="description" content="Node, validator and launch-day infrastructure for new networks: seed nodes, validators, rented fleets in more than 20 countries, and apps on GenLayer.">
@@ -330,7 +330,7 @@
     <a href="https://github.com/brilliantnodes"><svg width="22" height="22" aria-hidden="true"><use href="#i-code"/></svg><span>GitHub<small>brilliantnodes</small></span></a>
     <a href="#inquiry" data-contact><svg width="22" height="22" aria-hidden="true"><use href="#i-mail"/></svg><span>Email<small>bn@brilliantnodes.com</small></span></a>
   </nav>
-  <p>© 2026 Brilliant Nodes. The code of every app on this page is public on <a href="https://github.com/brilliantnodes">GitHub</a>. <a href="/security.html">Security</a>. This site sets no cookies. Its only outside request reads the live status of our nodes from our public status record on GitHub.</p>
+  <p>© 2026 Brilliant Nodes. The code of every app on this page is public on <a href="https://github.com/brilliantnodes">GitHub</a>. <a href="/security.html">Security</a>. This site sets no cookies. It makes only two outside requests: it reads the live status of our nodes from our public status record on GitHub, and, when you send the inquiry form, it passes your message to our form service, FormSubmit, which emails it to us.</p>
 </footer>
 
 <svg class="sprite" aria-hidden="true">
@@ -347,7 +347,7 @@
 </svg>
 
 <dialog class="inquiry" id="inquiry-dlg" aria-labelledby="inq-h">
-  <form id="inq-form" novalidate>
+  <form id="inq-form" novalidate data-endpoint="https://formsubmit.co/ajax/bn@brilliantnodes.com">
     <div class="inq-head"><h2 id="inq-h">Send us an inquiry</h2><button type="button" class="inq-x" data-close aria-label="Close">×</button></div>
     <p class="inq-intro">Your message goes to <b>bn@brilliantnodes.com</b>. Fill in the form and press Send.</p>
     <div class="inq-grid">
@@ -365,8 +365,14 @@
     <label class="inq-msg"><span>Message</span><textarea name="msg" required maxlength="1500" rows="6"></textarea><span class="inq-count" id="inq-count" aria-live="polite">0 / 1,500</span></label>
     <p class="inq-err" id="inq-err" role="alert"></p>
     <div class="inq-actions"><button type="submit" class="btn btn-solid inq-send">Send</button><button type="button" class="btn" data-close>Cancel</button></div>
-    <p class="inq-hint">Send opens your email app with the message ready to bn@brilliantnodes.com. Press Send there to deliver it.</p>
+    <p class="inq-hint" id="inq-hint">Send opens your email app with the message ready to bn@brilliantnodes.com. Press Send there to deliver it.</p>
+    <label class="hp" aria-hidden="true">Leave this empty<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
   </form>
+  <div class="inq-done" id="inq-sent" hidden>
+    <div class="inq-head"><h2 tabindex="-1" id="inq-sent-h">Thank you, your message has been sent</h2><button type="button" class="inq-x" data-close aria-label="Close">×</button></div>
+    <p>It is on its way to <b>bn@brilliantnodes.com</b>. We will reply to <b id="inq-sent-to"></b>.</p>
+    <div class="inq-actions"><button type="button" class="btn btn-solid" data-close>Close</button></div>
+  </div>
   <div class="inq-done" id="inq-done" hidden>
     <div class="inq-head"><h2 tabindex="-1" id="inq-done-h">Your email app should now be open</h2><button type="button" class="inq-x" data-close aria-label="Close">×</button></div>
     <p>The message is ready there, addressed to bn@brilliantnodes.com. Press Send in your email app to send it.</p>

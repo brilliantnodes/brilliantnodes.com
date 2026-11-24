@@ -448,3 +448,7 @@ html:not(.js) .inq-open button{display:none}
 /* v12: keep Send in view on small screens */
 .inquiry form .inq-actions{position:sticky;bottom:calc(-1 * clamp(20px,4vw,32px));margin:0 calc(-1 * clamp(20px,4vw,32px));padding:12px clamp(20px,4vw,32px) clamp(16px,3vw,24px);background:var(--raise);border-top:1px solid var(--line);z-index:1}
 @media (max-width:600px){.inquiry textarea{min-height:96px}.inquiry form{gap:12px}}
+
+/* v12: form spam trap, kept off screen */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.inq-send:disabled{opacity:.7;cursor:progress}
