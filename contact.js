@@ -71,7 +71,7 @@
       sendBtn.disabled = true; sendBtn.textContent = 'Sending…';
       const ctl = 'AbortController' in window ? new AbortController() : null, timer = setTimeout(() => ctl && ctl.abort(), 15000);
       fetch(KEY, {
-        method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, credentials: 'omit', referrerPolicy: 'no-referrer',
+        method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, credentials: 'omit', referrerPolicy: 'strict-origin-when-cross-origin',
         signal: ctl ? ctl.signal : undefined,
         body: JSON.stringify({ _subject: subject, _template: 'table', _replyto: email, name, email, organisation: org || '-', topic, message: msg })
       }).then(r => r.json().catch(() => ({})).then(d => { if (!r.ok || String(d.success) !== 'true') throw new Error(d.message || r.status); }))
