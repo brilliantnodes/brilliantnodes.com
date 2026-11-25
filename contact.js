@@ -69,7 +69,7 @@
       if (!KEY) { viaMail(false); return; }
       if (form.elements.botcheck && form.elements.botcheck.checked) return;
       sendBtn.disabled = true; sendBtn.textContent = 'Sending…';
-      const ctl = 'AbortController' in window ? new AbortController() : null, timer = setTimeout(() => ctl && ctl.abort(), 15000);
+      const ctl = 'AbortController' in window ? new AbortController() : null, timer = setTimeout(() => ctl && ctl.abort(), 45000);
       fetch(KEY, {
         method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, credentials: 'omit', referrerPolicy: 'strict-origin-when-cross-origin',
         signal: ctl ? ctl.signal : undefined,
