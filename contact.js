@@ -28,7 +28,8 @@
   if (dlg && typeof dlg.showModal === 'function') {
     const form = document.getElementById('inq-form'), done = document.getElementById('inq-done'), sentBox = document.getElementById('inq-sent');
     const KEY = (form.dataset.endpoint || '').trim(), sendBtn = form.querySelector('button[type=submit]');
-    if (KEY) document.getElementById('inq-hint').textContent = 'Send delivers your message straight to bn@brilliantnodes.com.';
+    const hint = document.getElementById('inq-hint'), HINT_READY = 'Send delivers your message straight to bn@brilliantnodes.com.';
+    if (KEY) hint.textContent = HINT_READY;
     const err = document.getElementById('inq-err'), count = document.getElementById('inq-count'), copied = document.getElementById('inq-copied');
     const f = n => form.elements[n];
     let last = { subject: '', body: '' };
@@ -69,7 +70,8 @@
       if (!KEY) { viaMail(false); return; }
       if (form.elements.botcheck && form.elements.botcheck.checked) return;
       sendBtn.disabled = true; sendBtn.textContent = 'Sending…';
-      const ctl = 'AbortController' in window ? new AbortController() : null, timer = setTimeout(() => ctl && ctl.abort(), 45000);
+      hint.textContent = 'Sending. This can take up to 30 seconds. Please keep this page open.'; hint.setAttribute('role', 'status');
+      const ctl = 'AbortController' in window ? new AbortController() : null, timer = setTimeout(() => ctl && ctl.abort(), 60000);
       fetch(KEY, {
         method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, credentials: 'omit', referrerPolicy: 'strict-origin-when-cross-origin',
         signal: ctl ? ctl.signal : undefined,
@@ -82,7 +84,7 @@
           setTimeout(() => document.getElementById('inq-sent-h').focus(), 30);
         })
         .catch(() => viaMail(true))
-        .finally(() => { clearTimeout(timer); sendBtn.disabled = false; sendBtn.textContent = 'Send'; });
+        .finally(() => { clearTimeout(timer); sendBtn.disabled = false; sendBtn.textContent = 'Send'; hint.textContent = HINT_READY; });
     });
 
     document.getElementById('inq-copy').addEventListener('click', () => {
