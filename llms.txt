@@ -10,6 +10,9 @@
 
 ## Pages
 - [Home](https://www.brilliantnodes.com/): services, servers, development work, research, validators and contact
+- [Validators and nodes](https://www.brilliantnodes.com/validators.html): the nodes we run, our validator programmes, how we run them, launch-day preparation
+- [Our GenLayer work](https://www.brilliantnodes.com/genlayer.html): every GenLayer app and building block, with code, demos, contracts and articles
+- [Questions and answers](https://www.brilliantnodes.com/faq.html): short answers about who we are, our networks, servers, security and apps
 - [Security](https://www.brilliantnodes.com/security.html): how we keep keys, servers and software safe, and how to report a problem
 
 ## Development projects (GenLayer)

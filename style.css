@@ -455,3 +455,6 @@ html:not(.js) .inq-open button{display:none}
 
 /* v13: key-facts numbers sized to their text so the gradient never clips the last character (e.g. the + in 2,000+) */
 .facts strong{display:inline-block;white-space:nowrap;padding-right:.12em;margin-right:-.12em;font-size:clamp(30px,3.1vw,46px)}
+
+/* v14: small status tag in subpage headings (e.g. "accepted") */
+.band h2 small{font-size:.55em;font-weight:600;letter-spacing:0;color:var(--mute,#c9bfd3);white-space:nowrap}

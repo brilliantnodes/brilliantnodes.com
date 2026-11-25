@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Our GenLayer work · Brilliant Nodes</title>
+<meta name="description" content="Apps and building blocks Brilliant Nodes built on GenLayer: Launch Claim Checker, ClaimEscrow, PrivateCreditGate, RigSettle, ReportReader, RuleCheck and MeterReader. Public code, live demos, test tokens only.">
+<link rel="canonical" href="https://www.brilliantnodes.com/genlayer.html">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#2A2133">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.brilliantnodes.com/genlayer.html">
+<meta property="og:title" content="Our GenLayer work · Brilliant Nodes">
+<meta property="og:description" content="Apps and building blocks we built on GenLayer, with public code and live demos.">
+<meta property="og:image" content="https://www.brilliantnodes.com/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/ahn-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ahn-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js" defer></script>
+<script src="/contact.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.brilliantnodes.com/"}, {"@type": "ListItem", "position": 2, "name": "Our GenLayer work", "item": "https://www.brilliantnodes.com/genlayer.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Our GenLayer work", "url": "https://www.brilliantnodes.com/genlayer.html", "publisher": {"@id": "https://www.brilliantnodes.com/#org"}}</script>
+</head>
+<body class="subpage">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+    <a class="mark" href="/" aria-label="Brilliant Nodes, home">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><use href="#facet-mark"/></svg>
+      <span>Brilliant Nodes</span>
+    </a>
+    <nav aria-label="Pages">
+      <a href="/#run">What we do</a>
+      <a href="/genlayer.html" aria-current="page">Development</a>
+      <a href="/validators.html">Validators</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/#inquiry">Contact</a>
+    </nav>
+  </header>
+
+<main id="main">
+<div class="page-head">
+  <h1>Our GenLayer work</h1>
+  <p class="lede">Apps and building blocks on GenLayer that settle agreements against public records. Four have been accepted in GenLayer’s builder programme so far.</p>
+  <p class="report-now"><a class="btn btn-solid" href="https://github.com/brilliantnodes">All code on GitHub</a> <span>Open source, MIT licence</span></p>
+</div>
+
+<div class="flow">
+  <section class="band" id="what" aria-labelledby="what-h">
+    <h2 id="what-h">What GenLayer does</h2>
+    <p class="wide">GenLayer is a blockchain whose validators can read public web pages and use AI models to agree on what those pages say. We use it to settle agreements against public records: money waits in escrow, and moves only when the validators agree.</p>
+    <ol class="steps-plain">
+      <li><b>Money waits.</b> The buyer’s payment is locked in the contract.</li>
+      <li><b>Validators read.</b> Several validators each read the same public page.</li>
+      <li><b>They must agree.</b> The result counts only when they agree on what the page says.</li>
+      <li><b>Money moves.</b> The contract pays out by that result, with no one in the middle.</li>
+    </ol>
+    <p class="wide">Every app below has public code, a live demo and a written article. All of them use fictional companies and test tokens only.</p>
+  </section>
+
+  <section class="band" id="checker" aria-labelledby="checker-h">
+    <h2 id="checker-h">Launch Claim Checker <small>· accepted</small></h2>
+    <p class="wide">Checks a new coin’s launch claims, such as fair mining or no premine, against what its block explorer shows, and records the verdict on chain. Seven test cases ran live on GenLayer’s public test network: 41 transactions, all matching our record.</p>
+    <p class="wide"><a href="https://checker.brilliantnodes.com/">Open the checker</a> · <a href="https://checker.brilliantnodes.com/article.html">Article</a> · <a href="https://github.com/brilliantnodes/launch-claim-checker">Code</a> · <a href="https://youtu.be/fFNq9PY1vSI">Video</a> · <a href="https://scan.bradbury.genlayer.com/address/0xc437e39BA9e51282a259c814e2d4d9CcEF6c257b">Contract</a></p>
+  </section>
+
+  <section class="band" id="claims" aria-labelledby="claims-h">
+    <h2 id="claims-h">ClaimEscrow</h2>
+    <p class="wide">A safer way to buy and sell bankruptcy claims. The price waits in escrow while validators read the claim’s entry on the public claims register; the seller is paid for the amount finally allowed, and the buyer gets the rest back. Nine fictional deals ran on GenLayer’s public test network: 70 transactions, all finalized and matching our record.</p>
+    <p class="wide"><a href="https://claims.brilliantnodes.com/">Open ClaimEscrow</a> · <a href="https://claims.brilliantnodes.com/article.html">Article</a> · <a href="https://github.com/brilliantnodes/claim-escrow">Code</a> · <a href="https://youtu.be/MFiW9LkCT1s">Video</a> · <a href="https://scan.bradbury.genlayer.com/address/0xdE2e969ecFE0229849ad95CF3Df8aC803F079131">Contract</a></p>
+  </section>
+
+  <section class="band" id="privatecredit" aria-labelledby="privatecredit-h">
+    <h2 id="privatecredit-h">PrivateCreditGate</h2>
+    <p class="wide">Checks the financial limits a borrower has promised to keep (loan covenants) straight from its published report, instead of someone retyping figures from a PDF. Validators read the report, code applies the loan terms, and breach, cure and repayment are settled on chain. 63 transactions on GenLayer’s public test network, each checked against the chain.</p>
+    <p class="wide"><a href="https://privatecredit.brilliantnodes.com/">Open PrivateCreditGate</a> · <a href="https://privatecredit.brilliantnodes.com/article.html">Article</a> · <a href="https://github.com/brilliantnodes/privatecredit-gate">Code</a> · <a href="https://youtu.be/d7g2sU8bzn0">Video</a> · <a href="https://scan.bradbury.genlayer.com/address/0x8c17b9742700539D3A2Ec97111073e5c93A6e1f0">Contract</a></p>
+  </section>
+
+  <section class="band" id="rigsettle" aria-labelledby="rigsettle-h">
+    <h2 id="rigsettle-h">RigSettle</h2>
+    <p class="wide">Escrow for renting mining power. The buyer’s payment is locked, validators read the buyer’s mining pool page, and the escrow is split by the hashrate actually delivered. 11 of 11 test cases passed live on GenLayer Studio, and the contract also runs on the public test network.</p>
+    <p class="wide"><a href="https://rigsettle.brilliantnodes.com/">Open RigSettle</a> · <a href="https://rigsettle.brilliantnodes.com/article.html">Article</a> · <a href="https://github.com/brilliantnodes/rigsettle">Code</a> · <a href="https://youtu.be/f3gmJecyeSU">Video</a> · <a href="https://scan.bradbury.genlayer.com/address/0xa91Ee5FEe48852620E6deC87159f04Edb40312B4">Contract</a></p>
+  </section>
+
+  <section class="band" id="patterns" aria-labelledby="patterns-h">
+    <h2 id="patterns-h">ReportReader, RuleCheck and MeterReader <small>· all three accepted</small></h2>
+    <p class="wide">Three building blocks that other contracts can use. ReportReader reads exact figures from published company reports. RuleCheck checks facts on public pages against rules written as data. MeterReader turns a public statistics table into one agreed reading. ReportReader ran 35 live transactions, all finalized; MeterReader’s readings agreed exactly on the public test network; RuleCheck ran four live checks, with three validators agreeing on each.</p>
+    <p class="wide"><a href="https://github.com/brilliantnodes/genlayer-patterns">All code</a> · <a href="https://explorer-studio.genlayer.com/address/0xd2f8B46D5A325eF6E81476063DD1520c9EDD2029">ReportReader contract</a> · <a href="https://explorer-studio.genlayer.com/address/0x28BEC7C9A99cd19c101fbaB1CaFe0b6e4Db3f21e">RuleCheck contract</a> · <a href="https://scan.bradbury.genlayer.com/address/0x286A160029D89b2C9fA6e1cEe0f31A954Eb329B4">MeterReader contract</a></p>
+  </section>
+
+  <section class="band" id="research" aria-labelledby="research-h">
+    <h2 id="research-h">Research behind the apps</h2>
+    <p class="wide">Each app starts from a real problem, written up in plain words: how it is handled today, where that falls short, what we propose, and what our tests showed.</p>
+    <ul class="checks">
+      <li><a href="https://claims.brilliantnodes.com/article.html">Who carries the risk when a bankruptcy claim is sold?</a></li>
+      <li><a href="https://privatecredit.brilliantnodes.com/article.html">The weakest link in private credit is a person typing numbers</a></li>
+      <li><a href="https://rigsettle.brilliantnodes.com/article.html">Paying for rented mining power without a judge</a></li>
+      <li><a href="https://checker.brilliantnodes.com/article.html">“No premine”, “fair launch”: who checks the promises new coins make?</a></li>
+    </ul>
+    <p class="wide">We also run nodes and take part in GenLayer’s validator programme: <a href="/validators.html">see our validator work</a>.</p>
+  </section>
+</div>
+</main>
+
+<footer class="foot">
+  <nav class="social" aria-label="Brilliant Nodes elsewhere">
+    <a href="https://x.com/brilliantnodes"><svg width="22" height="22" aria-hidden="true"><use href="#i-at"/></svg><span>X<small>@brilliantnodes</small></span></a>
+    <a href="https://www.youtube.com/@Brilliantnodes"><svg width="22" height="22" aria-hidden="true"><use href="#i-play"/></svg><span>YouTube<small>@Brilliantnodes</small></span></a>
+    <button type="button" class="copy-handle" data-copy="brilliantnodes" aria-label="Discord: brilliantnodes. Copy the username"><svg width="22" height="22" aria-hidden="true"><use href="#i-chat"/></svg><span>Discord<small><b>brilliantnodes</b><i class="copy-state"> · copy</i></small></span></button>
+    <a href="https://github.com/brilliantnodes"><svg width="22" height="22" aria-hidden="true"><use href="#i-code"/></svg><span>GitHub<small>brilliantnodes</small></span></a>
+    <a href="/#inquiry"><svg width="22" height="22" aria-hidden="true"><use href="#i-mail"/></svg><span>Email<small>bn@brilliantnodes.com</small></span></a>
+  </nav>
+  <p>© 2026 Brilliant Nodes. <a href="/">Home</a> · <a href="/validators.html">Validators</a> · <a href="/genlayer.html">GenLayer work</a> · <a href="/faq.html">FAQ</a> · <a href="/security.html">Security</a> · <a href="https://github.com/brilliantnodes">GitHub</a></p>
+</footer>
+
+<svg class="sprite" aria-hidden="true">
+  <defs><linearGradient id="mark-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF5E7A"/><stop offset=".5" stop-color="#FFB547"/><stop offset="1" stop-color="#3DDCFF"/></linearGradient></defs>
+  <symbol id="i-at" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3.4"/><path d="M15.4 8.6v4.6a2.4 2.4 0 0 0 4.8 0V12a8.2 8.2 0 1 0-3.2 6.5"/></g></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 8.3l6 3.7-6 3.7z" fill="currentColor"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3.5 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3h-2A1.5 1.5 0 0 1 2 13V7a1.5 1.5 0 0 1 1.5-1.5z"/><path d="M18 9h2.5A1.5 1.5 0 0 1 22 10.5v6a1.5 1.5 0 0 1-1.5 1.5H19v2.5L16 18h-4"/></g></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7L3.5 12l5 5M15.5 7l5 5-5 5M13.5 4.5l-3 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6.5L20.5 7"/></g></symbol>
+  <symbol id="facet-mark" viewBox="0 0 32 32">
+    <path d="M9 6h14l7 8-14 14L2 14z" fill="none" stroke="url(#mark-g)" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M2 14h28M9 6l3 8 4-8 4 8 3-8M12 14l4 14 4-14" fill="none" stroke="url(#mark-g)" stroke-width="1.2" stroke-linejoin="round" opacity=".8"/>
+  </symbol>
+</svg>
+</body>
+</html>
